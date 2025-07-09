@@ -1,8 +1,7 @@
 import { test } from '@playwright/test';
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage';
 import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage';
-
-const { person } = require('../../../src/TestData.js');
+import { person } from '../../../src/TestData.js';
 
 test('Assert manager can add new customer', async ({ page }) => {
   let addCustomerPage = new AddCustomerPage(page);

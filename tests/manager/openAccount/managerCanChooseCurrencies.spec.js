@@ -1,7 +1,6 @@
 import { test } from '@playwright/test';
-import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage.js'
-
-const { currency } = require('../../../src/TestData.js');
+import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage.js';
+import { currency } from '../../../src/TestData.js';
 
 test('Assert manager can choose currencies for account', async ({ page }) => {
   let openAccountPage = new OpenAccountPage(page);

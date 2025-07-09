@@ -5,16 +5,15 @@ import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage
 import { RandomObject } from '../../../src/randomGenerator.js';
 import { BankHomePage } from '../../../src/pages/BankHomePage.js';
 import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage.js';
+import { person, currency } from '../../../src/TestData.js';
 
-const { person } = require('../../../src/TestData.js');
-const { currency } = require('../../../src/TestData.js');
 const randomCurrency = RandomObject.selectRandomKeyValue(currency);
 
 let addCustomerPage;
 let openAccountPage;
 let customerLoginPage;
 let bankHomePage;
-let customerAccountPage
+let customerAccountPage;
 
 test.beforeEach(async ({ page }) => {
   addCustomerPage = new AddCustomerPage(page);

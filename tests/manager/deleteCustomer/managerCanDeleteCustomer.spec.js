@@ -1,11 +1,10 @@
 import { test } from '@playwright/test';
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage';
 import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage';
+import { person } from '../../../src/TestData.js';
 
 let addCustomerPage;
 let customerListPage;
-
-const { person } = require('../../../src/TestData.js');
 
 test.beforeEach(async ({ page }) => {
   addCustomerPage = new AddCustomerPage(page);

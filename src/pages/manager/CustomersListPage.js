@@ -1,4 +1,3 @@
-import { th } from '@faker-js/faker';
 import { expect } from '@playwright/test';
 
 export class CustomersListPage {

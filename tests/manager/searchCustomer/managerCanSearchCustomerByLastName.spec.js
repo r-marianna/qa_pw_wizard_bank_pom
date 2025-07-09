@@ -1,8 +1,8 @@
 import { test } from '@playwright/test';
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage.js';
 import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage.js';
+import { person } from '../../../src/TestData.js';
 
-const { person } = require('../../../src/TestData.js');
 let addCustomerPage;
 let customersListPage;
 

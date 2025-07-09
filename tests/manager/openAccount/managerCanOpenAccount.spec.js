@@ -3,9 +3,8 @@ import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage.js';
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage.js';
 import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage.js';
 import { RandomObject } from '../../../src/randomGenerator.js';
+import { person, currency } from '../../../src/TestData.js';
 
-const { person } = require('../../../src/TestData.js');
-const { currency } = require('../../../src/TestData.js');
 const randomCurrency = RandomObject.selectRandomKeyValue(currency);
 
 let addCustomerPage;

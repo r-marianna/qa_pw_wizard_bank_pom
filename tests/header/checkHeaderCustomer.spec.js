@@ -3,8 +3,8 @@ import { BankHomePage } from '../../src/pages/BankHomePage.js';
 import { CustomerAccountPage } from "../../src/pages/customer/CustomerAccountPage.js";
 import { RandomObject } from '../../src/randomGenerator.js';
 import { CustomerLoginPage } from '../../src/pages/customer/CustomerLoginPage.js';
+import { users } from '../../src/TestData.js';
 
-const { users } = require('../../src/TestData.js');
 const generatedUser = RandomObject.selectRandomKeyValue(users);
 
 let bankHomePage;

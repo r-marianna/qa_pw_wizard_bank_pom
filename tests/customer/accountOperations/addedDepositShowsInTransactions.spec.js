@@ -4,10 +4,8 @@ import { CustomerAccountPage } from "../../../src/pages/customer/CustomerAccount
 import { RandomObject } from '../../../src/randomGenerator.js';
 import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage.js';
 import { TransactionsPage } from "../../../src/pages/customer/TransactionsPage.js";
+import { users, options, accountOperations } from '../../../src/TestData.js';
 
-const { users } = require('../../../src/TestData.js');
-const { options } = require('../../../src/TestData.js');
-const { accountOperations } = require('../../../src/TestData.js');
 const generatedUser = RandomObject.selectRandomKeyValue(users);
 const todayDate = new Date().toLocaleString('en-US', options);
 
