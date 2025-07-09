@@ -27,19 +27,11 @@ export class CustomerAccountPage {
       'Transaction Failed. You can not withdraw amount more than the balance.',
     );
     this.logoutButton = page.getByRole('button', { name: 'Logout' });
+    this.homeButton = page.getByRole('button', { name: 'Home' });
   }
 
   async open() {
     await this.page.goto('/angularJs-protractor/BankingProject/#/account');
-  }
-
-  async assertAccountIdInDropDownHasValue(value) {
-    const accountNumberInDrodown = this.accountIdDropDown;
-    await expect(accountNumberInDrodown).toHaveValue(value);
-  }
-
-  async assertAccountLineContainsText(text) {
-    await expect(this.accountDataLine).toContainText(text);
   }
 
   async clickDepositButton() {
@@ -53,11 +45,6 @@ export class CustomerAccountPage {
   async clickWithdrawlButton() {
     await this.withdrawlButton.click();
   }
-
-  async fillAmountInputField(amount) {
-    await this.amountInputField.fill(amount);
-  }
-
   async clickDepositFormButton() {
     await this.depositFormButton.click();
   }
@@ -68,6 +55,27 @@ export class CustomerAccountPage {
 
   async clickLogoutButton() {
     await this.logoutButton.click();
+  }
+
+  async clickHomeButton() {
+    await this.homeButton.click();
+  }
+
+  async fillAmountInputField(amount) {
+    await this.amountInputField.fill(amount);
+  }
+
+  async assertAccountIdInDropDownHasValue(value) {
+    const accountNumberInDrodown = this.accountIdDropDown;
+    await expect(accountNumberInDrodown).toHaveValue(value);
+  }
+
+  async assertAccountIdInDropDownCanBeChanged(value) {
+    await this.accountIdDropDown.selectOption(value);
+  }
+
+  async assertAccountLineContainsText(text) {
+    await expect(this.accountDataLine).toContainText(text);
   }
 
   async assertDepositSuccessfulMessageIsVisible() {

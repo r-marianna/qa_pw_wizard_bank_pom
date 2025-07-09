@@ -10,6 +10,11 @@ export class TransactionsPage {
     this.firstRow = page.getByRole('row').nth(1);
     this.firstRowAmountCell = this.firstRow.getByRole('cell').nth(1);
     this.firstRowTypeCell = this.firstRow.getByRole('cell').nth(2);
+    this.lastRow = page.getByRole('row').last();
+    this.lastRowFirstCell = this.lastRow.getByRole('cell').nth(0);
+    this.lastRowSecondCell = this.lastRow.getByRole('cell').nth(1);
+    this.lastRowThirdCell = this.lastRow.getByRole('cell').nth(2);
+    this.calendarStart = page.getByTestId('start');
   }
 
   async open() {
@@ -19,8 +24,16 @@ export class TransactionsPage {
     await this.page.reload();
   }
 
+  async fillCalendarFirstDate(day) {
+    await this.calendarStart.fill(day);
+  }
+
   async assertFirstRowAmountContainsText(amount) {
     await expect(this.firstRowAmountCell).toContainText(amount);
+  }
+
+  async assertLastRowAmountContainsText(amount) {
+    await expect(this.lastRowSecondCell).toContainText(amount);
   }
 
   async assertFirstRowTypeContainsText(type) {
@@ -45,5 +58,17 @@ export class TransactionsPage {
 
   async assertHeaderThirdCellContainsText(text) {
     await expect(this.headerThirdCell).toContainText(text);
+  }
+
+  async assertLastRowFirstCellContainsText(text) {
+    await expect(this.lastRowFirstCell).toContainText(text);
+  }
+
+  async assertLastRowSecondCellContainsText(text) {
+    await expect(this.lastRowSecondCell).toContainText(text);
+  }
+
+  async assertLastRowCellThirdContainsText(text) {
+    await expect(this.lastRowThirdCell).toContainText(text);
   }
 }
